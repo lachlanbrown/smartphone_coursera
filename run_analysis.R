@@ -1,7 +1,7 @@
 
 ## Getting Cleaning Data Project Assignment
-## 1. You should create one R script called run_analysis.R that does the following. 
-## 2. Merges the training and the test sets to create one data set.
+## You should create one R script called run_analysis.R that does the following. 
+## 1. Merges the training and the test sets to create one data set.
 
 ## load the x_ files into R:
 
@@ -45,7 +45,7 @@ test_full = bind_cols(test_activity, subject_test)
 
 all_full = bind_rows(train_full, test_full) ## this works b/c train_full and test_full have identical # & names of columns
 
-## 3. Extracts only the measurements on the mean and standard deviation for each measurement. 
+## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 colsToKeep <- c(1:6,41:46,81:86, 121:126, 161:166, 201, 202, 214, 215, 227, 228,  240, 241, 253, 254, 266:271,  345:350, 424:429, 503, 504, 516, 517, 529, 530, 542, 543, 562, 563)
 
@@ -56,7 +56,7 @@ colsToKeep <- c(1:6,41:46,81:86, 121:126, 161:166, 201, 202, 214, 215, 227, 228,
 mean_std_extract <- all_full[, colsToKeep]
 ## creates new smaller data frame with only above-described mean and std variables
 
-## 4. Uses descriptive activity names to name the activities in the data set
+## 3. Uses descriptive activity names to name the activities in the data set
 
 mean_std_extract$activity_code <- as.character(mean_std_extract$activity_code)
 mean_std_extract$activity_code[mean_std_extract$activity_code == "1"] <- "WALKING"
@@ -67,7 +67,7 @@ mean_std_extract$activity_code[mean_std_extract$activity_code == "5"] <- "STANDI
 mean_std_extract$activity_code[mean_std_extract$activity_code == "6"] <- "LAYING"
 ## renames activity names from integer code to character in same column 'activity_code'
 
-## 5. Appropriately labels the data set with descriptive variable names. 
+## 4. Appropriately labels the data set with descriptive variable names. 
 
 mean_std_extract = rename(mean_std_extract, Mean_BodyAccelerationSignal_X_time= V1)
 mean_std_extract = rename(mean_std_extract, Mean_BodyAccelerationSignal_Y_time= V2)
@@ -138,7 +138,7 @@ mean_std_extract = rename(mean_std_extract, Std_MagnitudeofGyroJerkDerivation_fr
 ## renames variable column names to include a) summary measurement, b)description, c) X,Y,Z if appliicable
 ## used Excel concatenate formula to generate above and saved file in case mods needed
 
-## 6. From the data set in step 4, creates a second, independent tidy data set with the average 
+## 5. From the data set in step 4, creates a second, independent tidy data set with the average 
 ##  of each variable for each activity and each subject.
 
 mean_std_extract$activity_subject = paste(mean_std_extract$activity_code, mean_std_extract$subject_code, sep = "_" )
