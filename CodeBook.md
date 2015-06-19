@@ -18,8 +18,8 @@
 ## Variable descriptions
 1. Activity labels: self-evident, e.g. WALKING, WALKING_UPSTAIRS, etc.
 2. Subject codes: integers from 1 - 30, divided approximately as 70% train group, and 30% test group, broken out as follows:
-  - Train subject #s: 1,3,5,6,7,8,11,14,15,16,17,19,21,22,23,25,26,27,28,29,30 (21 total or 70%)
-  - Test subject #s: 2,4,9,10,12,13,18,20,24 (9 total or 30%)
+  - Train subject #s: 1,3,5,6,7,8,11,14,15,16,17,19,21,22,23,25,26,27,28,29,30
+  - Test subject #s: 2,4,9,10,12,13,18,20,24
 3. Measurement variables: there are 4 components to the measurement column names (cols 2 - 67 in the final output data frame), e.g. label Mean_BodyAccelerationSignal_X_time:
   - aggregation method (mean or std)
   - Measurement type (indiviual descriptions below)
