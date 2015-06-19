@@ -12,5 +12,5 @@
 5. Rows 50 - 56 designate which columns contain the meaurement data for mean and standard deviation, and then subsets the data frame from step 4 into a new data frame (same # of rows, but now with only 68 columns, 66 for measurements and 1 each for activity and subject code)
 6. Rows 61 - 137 rename a) the activity code from an integer (1:6) to descriptive names based on the mapping in the file "activity_labels.txt", and b) each of the measurement column headers based on the mapping from "features.txt"
 7. The final step (rows 144 - 150) summarizes the avg values of the mean and std measurements by activity and subject. It does this by means of the reshape2 R package, utilizing the melt() and dcast() functions. In order to create a character vector of measurements to include as the 'measure.vars' argument, row 148 subsets the data frame from step 6 by col names (1:66), whcih correspond with the measurement values. 
-### the final output of this code is an R data frame "meanData" consisting of 180 observations (6 activities X 30 subjects) and 67 variables(66 measurement means and 1 "index" column of unique activity_subject combinations)
+*** the final output of this code is an R data frame "meanData" consisting of 180 observations (6 activities X 30 subjects) and 67 variables(66 measurement means and 1 "index" column of unique activity_subject combinations)
 
